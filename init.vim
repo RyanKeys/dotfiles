@@ -56,4 +56,17 @@ Plug 'colors/onedark.vim'
 call plug#end()
 syntax on
 colorscheme onedark
-
+" open files from netrw in a previous window
+let g:netrw_browse_split = 4
+"tree-like listing of directories in netrw
+let g:netrw_liststyle = 3
+"set width of 25% of current window width
+let g:netrw_winsize = 25
+" open files from netrw in a previous window, unless we're opening the current
+" dir
+if argv(0) ==# '.'
+    let g:netrw_browse_split = 0
+else
+    let g:netrw_browse_split = 4
+endif
+"
